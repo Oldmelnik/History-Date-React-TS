@@ -1,0 +1,36 @@
+.bigDates {
+  display: flex;
+  justify-content: space-between;
+
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(56px, 17.5vw, 112px);
+  letter-spacing: -0.02em;
+  z-index: 2;
+
+  & span:first-child {
+    color: rgb(93, 95, 239);
+  }
+  & span:last-child {
+    color: rgba(239, 93, 168, 1);
+  }
+
+  @media ($bp-1) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+
+    font-family: PT Sans;
+    font-size: 200px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+}

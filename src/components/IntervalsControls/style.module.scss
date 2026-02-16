@@ -1,0 +1,96 @@
+.controls {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 50;
+
+  display: grid;
+  gap: 5px;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: flex-start;
+
+  .controlsTitle {
+    font-family: PT Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.12px;
+    text-align: left;
+
+    color: $clr-gray-text1;
+
+    grid-area: span 1 / span 2;
+    @media ($bp-1) {
+      align-self: center;
+    }
+  }
+  
+  .controlsLeftButton {
+    transform: rotate(180deg);
+  }
+
+  .controlsButton {
+    cursor: pointer;
+
+    place-self: center center;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid $clr-gray2;
+    color: $clr-gray2;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      transform: scale(70%);
+      @media ($bp-1) {
+        transform: scale(50%);
+      }
+    }
+
+    &.controlsButtonInactive {
+      border-color: $clr-gray2-50;
+      & img {
+        stroke: $clr-gray2-50;
+      }
+    }
+
+    @media ($bp-1) {
+      width: 50px;
+      height: 50px;
+
+      &:hover:not(:disabled) {
+        background-color: #fff;
+      }
+    }
+  }
+
+  @media ($bp-1) {
+    position: relative;
+    place-self: start;
+    gap: 15px;
+  }
+}
+
+.mobileHide {
+  display: none;
+  @media ($bp-1) {
+    display: grid;
+  }
+}
+
+.tabletHide {
+  @media ($bp-1) {
+    display: none;
+  }
+}

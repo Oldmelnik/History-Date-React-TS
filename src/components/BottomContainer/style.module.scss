@@ -1,0 +1,14 @@
+.bottomContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+
+  position: relative;
+  background-color: transparent;
+  z-index: 40;
+
+  @media ($bp-1) {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,98 @@
+.roundControls {
+  display: none;
+
+  @media ($bp-1) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    container-type: inline-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+
+    & .circle {
+      cursor: pointer;
+
+      width: clamp(37cqw, 530px, 530px);
+      height: clamp(37cqw, 530px, 530px);
+
+      border: 1px solid $clr-gray1;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    & .dot {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & .number {
+        border: 1px solid $clr-gray1;
+        background-color: $clr-gray2;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: PT Sans;
+        font-size: 20px;
+        font-weight: 400;
+
+        transition-property: height, width, background-color;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+      }
+
+      &:hover .number,
+      &.dotActive .number {
+        background-color: $clr-main-bg;
+
+        width: 100%;
+        height: 100%;
+
+        transition-property: height, width, background-color;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+      }
+
+      & .label {
+        opacity: 0;
+        position: absolute;
+        left: 80px;
+        font-family: PT Sans;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: left;
+        color: $clr-gray-text1;
+        border: 0;
+        background-color: transparent;
+
+        transition-property: opacity;
+        transition-duration: 300ms;
+        transition-delay: 700ms;
+        transition-timing-function: ease-in-out;
+      }
+
+      &.dotActive .label {
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 300ms;
+        transition-delay: 700ms;
+        transition-timing-function: ease-in-out;
+      }
+    }
+  }
+}

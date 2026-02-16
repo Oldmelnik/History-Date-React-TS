@@ -1,0 +1,19 @@
+.coordNet {
+  display: none;
+  z-index: 1;
+
+  @media ($bp-1) {
+    display: block;
+    top: 0;
+    left: calc(50cqi + 80px);
+    bottom: 0;
+    right: calc(50cqi + 80px);
+    position: absolute;
+    background-color: transparent;
+
+    border: 0;
+    border-style: solid;
+    border-right-width: 1px;
+    border-color: $clr-gray1;
+  }
+}

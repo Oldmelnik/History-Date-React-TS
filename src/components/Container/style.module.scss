@@ -1,0 +1,30 @@
+.container {
+  overflow: hidden;
+  background-color: $clr-main-bg;
+  position: relative;
+  container-type: inline-size;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-height: 568px;
+  padding: 10px 20px;
+
+  max-width: 1440px;
+  z-index: 0;
+  border: 0;
+
+  @media ($bp-1) {
+    grid-template-rows: 3fr 1fr;
+    padding: 0 80px;
+    padding-top: 100px;
+
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-color: $clr-gray1;
+  }
+}
